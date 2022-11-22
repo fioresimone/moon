@@ -6,7 +6,7 @@ import Physical from "./Physical";
 
 export default function Data() {
   const [data, setData] = useState();
-  async function getDatsa() {
+  async function getData() {
     fetch(process.env.REACT_APP_URL, {
       headers: {
         [process.env.REACT_APP_KEY]: process.env.REACT_APP_VALUE,
@@ -19,7 +19,7 @@ export default function Data() {
       });
   }
 
-  const { error, isError, isLoading } = useQuery("datsa", getDatsa, {
+  const { error, isError, isLoading } = useQuery("data", getData, {
     refetchInterval: 2000,
   });
 
